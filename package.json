@@ -4,8 +4,7 @@
   "description": "GitHub Action to install wasm-tools and add it to the PATH",
   "scripts": {
     "build": "tsc && ncc build -o dist src/index.ts",
-    "format": "prettier --write '**/*.ts'",
-    "format-check": "prettier --check '**/*.ts'"
+    "format": "prettier --write '**/*.ts'"
   },
   "repository": {
     "type": "git",

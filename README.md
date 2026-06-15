@@ -46,4 +46,4 @@ steps:
 
 ## License
 
-MIT © [StepSecurity](https://stepsecurity.io)
+[MIT](LICENSE)
