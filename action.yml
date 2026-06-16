@@ -1,0 +1,15 @@
+name: Setup wasm-tools
+description: Install a specific version of wasm-tools and add it to the PATH
+author: step-security
+inputs:
+  version:
+    required: false
+    description: The version of wasm-tools to install. Defaults to the latest release.
+    default: latest
+  github_token:
+    required: false
+    description: GitHub token used to query and download wasm-tools releases. Providing this avoids API rate limiting.
+    default: ${{ github.token }}
+runs:
+  using: node24
+  main: dist/index.js
