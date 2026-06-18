@@ -1,47 +1,57 @@
 [![StepSecurity Maintained Action](https://raw.githubusercontent.com/step-security/maintained-actions-assets/main/assets/maintained-action-banner.png)](https://docs.stepsecurity.io/actions/stepsecurity-maintained-actions)
 
-# wasm-tools-setup
+# step-security/bytecodealliance-actions
 
 A GitHub Action by [StepSecurity](https://stepsecurity.io) that installs [`wasm-tools`](https://github.com/bytecodealliance/wasm-tools) and adds it to the `PATH`, ready to use in subsequent workflow steps.
 
-## Usage
+Secure drop-in replacement for [`bytecodealliance/actions/wasm-tools/setup`](https://github.com/bytecodealliance/actions).
+
+## Install `wasm-tools`
 
 ### Inputs
 
-| Input | Required | Default | Description |
+| Name | Required | Default | Description |
 |---|---|---|---|
-| `version` | No | `latest` | `wasm-tools` version to install (e.g. `1.200.0`). Omit to get the latest release. |
-| `github_token` | No | `${{ github.token }}` | Token used to query the GitHub API. Supply this to avoid rate limiting on busy runners. |
+| `version` | No | `latest` | The version of `wasm-tools` to install. |
+| `github_token` | No | `${{ github.token }}` | GitHub token for querying/downloading `wasm-tools` releases. Avoids API rate limiting. |
 
-### Install the latest version
+### Examples
+
+#### Setting up the latest version of `wasm-tools`
 
 ```yaml
 steps:
-  - uses: step-security/wasm-tools-setup@v1
+  - name: Setup `wasm-tools`
+    uses: step-security/bytecodealliance-actions/wasm-tools/setup@v1
 
-  - run: wasm-tools --version
+  - name: Run `wasm-tools version`
+    run: wasm-tools --version
 ```
 
-### Pin to a specific version
+#### Setting up a specific version of `wasm-tools`
 
 ```yaml
 steps:
-  - uses: step-security/wasm-tools-setup@v1
+  - name: Setup `wasm-tools`
+    uses: step-security/bytecodealliance-actions/wasm-tools/setup@v1
     with:
       version: "1.200.0"
 
-  - run: wasm-tools --version
+  - name: Run `wasm-tools version`
+    run: wasm-tools --version
 ```
 
-### Use with a GitHub token
+#### Using with a GitHub token
 
 ```yaml
 steps:
-  - uses: step-security/wasm-tools-setup@v1
+  - name: Setup `wasm-tools`
+    uses: step-security/bytecodealliance-actions/wasm-tools/setup@v1
     with:
       github_token: ${{ secrets.GITHUB_TOKEN }}
 
-  - run: wasm-tools --version
+  - name: Run `wasm-tools version`
+    run: wasm-tools --version
 ```
 
 ## License
