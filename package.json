@@ -22,7 +22,7 @@
     "@actions/core": "^2.0.0",
     "@actions/exec": "^2.0.0",
     "@actions/io": "^2.0.0",
-    "@actions/tool-cache": "^3.0.0",
+    "@actions/tool-cache": "^4.0.0",
     "@octokit/rest": "^22.0.1",
     "@types/fs-extra": "^11.0.1",
     "@types/uuid": "^9.0.1",
